@@ -151,7 +151,7 @@ class NewCustomerController extends Controller
     public function storeBussiness(Request $request)
     {
         $uuid = $request->get('uuid');
-        $idPelanggan = 'PC'.date('YmdHis');
+        $idPelanggan = 'BC'.date('YmdHis');
 
         // Personal Validation
         $validator1 = Validator::make(
