@@ -2,9 +2,8 @@
 
 use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\NewCustomerController;
+use App\Http\Controllers\User\OldCustomerController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Str;
-use Ramsey\Uuid\Uuid;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +23,5 @@ Route::get('/new-member/personal/{id_customer}', [NewCustomerController::class, 
 Route::post('/new-member/personal', [NewCustomerController::class, 'storePersonal']);
 Route::get('/new-member/bussiness/{id_customer}', [NewCustomerController::class, 'indexBussiness']);
 Route::post('/new-member/bussiness/', [NewCustomerController::class, 'storeBussiness']);
-
-Route::get('/old-member', function () {
-});
+Route::get('/old-member', [OldCustomerController::class, 'index']);
+Route::get('/old-member/{class_customer}', [OldCustomerController::class, 'showDataCustomer']);

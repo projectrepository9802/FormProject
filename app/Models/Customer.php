@@ -19,4 +19,14 @@ class Customer extends Model
         'company_npwp',
         'company_employees',
     ];
+
+    public function billing()
+    {
+        return $this->hasOne(Billing::class, 'id', 'id');
+    }
+
+    public function technical()
+    {
+        return $this->hasOne(Technical::class, 'id', 'id');
+    }
 }
